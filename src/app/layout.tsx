@@ -14,7 +14,8 @@ import "@/assets/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "CYC Studio",
-  description: "Minimal Next.js + TypeScript + Tailwind + Redux Toolkit",
+  description:
+    "Creative frontend studio showcasing interactive and visual web projects",
 };
 
 export default function RootLayout({
@@ -24,10 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body> */}
-      <body>
-        <main className="p-4 w-full min-h-dvh">{children}</main>
-      </body>
+      <body className="bg-black text-white antialiased">{children}</body>
     </html>
   );
 }
