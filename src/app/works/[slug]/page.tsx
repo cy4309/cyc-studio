@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 import { getWorkBySlug, works } from "@/data/works";
+import Image from "next/image";
 
 export function generateStaticParams() {
   return works.map((work) => ({
@@ -41,9 +43,15 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
               <h1 className="text-5xl md:text-7xl font-light tracking-wider">
                 {work.title}
               </h1>
-              <p className="text-xl md:text-2xl opacity-80 max-w-3xl">
+              {/* <p className="text-xl md:text-2xl opacity-80 max-w-3xl">
                 {work.description}
-              </p>
+              </p> */}
+              <Image
+                src={work.image}
+                alt={work.title}
+                width={1080}
+                height={1080}
+              />
             </header>
 
             <div className="grid md:grid-cols-2 gap-8 py-8 border-y border-white/20">
@@ -53,6 +61,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
                 </h3>
                 <p className="text-lg">{work.focus}</p>
               </div>
+
               <div>
                 <h3 className="text-sm uppercase tracking-wider opacity-60 mb-2">
                   Technology
@@ -61,12 +70,12 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
               </div>
             </div>
 
-            <div className="pt-8">
+            <div>
               <a
                 href={work.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-lg tracking-wide border border-white/20 px-8 py-4 hover:bg-white hover:text-black transition-colors"
+                className="w-full text-center inline-block text-lg tracking-wide border border-white/20 px-8 py-4 hover:bg-white hover:text-black transition-colors"
               >
                 View Project →
               </a>
@@ -74,6 +83,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
           </article>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

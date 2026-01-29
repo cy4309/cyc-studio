@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 import { works } from "@/data/works";
 
 export default function WorksPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-32 pb-16 px-8">
+      <main className="min-h-dvh pt-32 pb-16 px-8">
         <div className="max-w-6xl mx-auto">
           {/* <h1 className="text-5xl md:text-7xl font-light tracking-wider mb-16">
             Works
@@ -26,16 +27,17 @@ export default function WorksPage() {
                   <p className="text-lg md:text-xl opacity-80 mb-6 max-w-3xl">
                     {work.description}
                   </p>
-                  <div className="flex flex-col md:flex-row md:space-x-8 space-y-2 md:space-y-0 text-sm opacity-60">
+                  {/* <div className="flex flex-col md:flex-row md:space-x-8 space-y-2 md:space-y-0 text-sm opacity-60">
                     <span>Focus: {work.focus}</span>
                     <span>Tech: {work.tech}</span>
-                  </div>
+                  </div> */}
                 </article>
               </Link>
             ))}
           </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

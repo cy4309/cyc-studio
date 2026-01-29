@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navigation() {
   return (
@@ -6,8 +7,14 @@ export default function Navigation() {
       <div className="flex justify-between items-center">
         <Link
           href="/"
-          className="text-xl font-medium tracking-wide hover:opacity-70 transition-opacity"
+          className="text-xl font-medium tracking-wide hover:opacity-70 transition-opacity flex items-center gap-2"
         >
+          <Image
+            src="/images/cyc-logo.png"
+            alt="CYC Studio"
+            width={24}
+            height={24}
+          />
           CYC Studio
         </Link>
         <Link
