@@ -29,18 +29,19 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-32 pb-16 px-8">
+      <main className="min-h-dvh pt-32 pb-16 px-8">
         <div className="max-w-4xl mx-auto">
           <Link
             href="/works"
             className="inline-block text-sm opacity-60 hover:opacity-100 transition-opacity mb-8"
           >
-            ← Back to Works
+            <span>←</span>
+            <span className="ml-2">Back to Works</span>
           </Link>
 
           <article className="space-y-12">
             <header className="space-y-8">
-              <h1 className="text-5xl md:text-7xl font-light tracking-wider">
+              <h1 className="text-5xl md:text-7xl tracking-wider">
                 {work.title}
               </h1>
               {/* <p className="text-xl md:text-2xl opacity-80 max-w-3xl">

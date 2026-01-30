@@ -21,7 +21,7 @@ export default function WorksPage() {
                 className="block group"
               >
                 <article className="border-b border-white/20 pb-12 group-hover:border-white/40 transition-colors">
-                  <h2 className="text-3xl md:text-4xl font-light tracking-wide mb-4 group-hover:opacity-70 transition-opacity">
+                  <h2 className="text-3xl md:text-4xl tracking-wide mb-4 group-hover:opacity-70 transition-opacity">
                     {work.title}
                   </h2>
                   <p className="text-lg md:text-xl opacity-80 mb-6 max-w-3xl">
