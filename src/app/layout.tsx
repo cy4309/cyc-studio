@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "@/assets/styles/globals.css";
+import { I18nProvider } from "@/locales/i18n";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ export default function RootLayout({
         // className={`bg-black text-white antialiased ${nunito.variable} font-nunito`}
         className={`bg-black text-white antialiased ${nunito.variable}`}
       >
-        {children}
+        <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
   );
