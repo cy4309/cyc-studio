@@ -1,12 +1,15 @@
 ﻿"use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function useScrollSections() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const sections = gsap.utils.toArray<HTMLElement>(".pin-section");
 
@@ -33,8 +36,10 @@ export function useScrollSections() {
       });
     });
 
+    ScrollTrigger.refresh();
+
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [pathname]);
 }
