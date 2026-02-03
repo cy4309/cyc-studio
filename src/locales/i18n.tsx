@@ -6,12 +6,16 @@ import {
   useContext,
   useMemo,
   useState,
+  useEffect,
   Dispatch,
   SetStateAction,
 } from "react";
-import { dictionary, type Language } from "@/locales/dictionary";
+import { zh } from "./zh";
+import { en } from "./en";
 
-type DictionaryNode = Record<string, unknown>;
+export type Language = "zh" | "en";
+
+const dictionaries = { zh, en };
 
 type I18nContextValue = {
   lang: Language;
@@ -23,13 +27,11 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 
 function getText(lang: Language, path: string): string {
   const segments = path.split(".");
-  let current: unknown = dictionary[lang] as DictionaryNode;
+  let current: any = dictionaries[lang];
 
-  for (const segment of segments) {
-    if (typeof current !== "object" || current === null) {
-      return path;
-    }
-    current = (current as DictionaryNode)[segment];
+  for (const seg of segments) {
+    current = current?.[seg];
+    if (!current) return path;
   }
 
   return typeof current === "string" ? current : path;
@@ -38,21 +40,30 @@ function getText(lang: Language, path: string): string {
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Language>("zh");
 
-  const value = useMemo<I18nContextValue>(() => {
-    return {
+  // 等 client mount 後再讀 localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem("lang") as Language | null;
+    if (saved) setLang(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+  }, [lang]);
+
+  const value = useMemo(
+    () => ({
       lang,
       setLang,
       t: (path: string) => getText(lang, path),
-    };
-  }, [lang]);
+    }),
+    [lang],
+  );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
 
 export function useI18n() {
-  const context = useContext(I18nContext);
-  if (!context) {
-    throw new Error("useI18n must be used within I18nProvider");
-  }
-  return context;
+  const ctx = useContext(I18nContext);
+  if (!ctx) throw new Error("useI18n must be used inside I18nProvider");
+  return ctx;
 }

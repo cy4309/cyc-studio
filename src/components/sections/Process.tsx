@@ -7,7 +7,7 @@ export default function Process() {
   const { t } = useI18n();
 
   return (
-    <section className="pin-section h-screen relative flex items-center">
+    <section className="pin-section h-dvh relative flex items-center">
       <div className="max-w-6xl mx-auto w-full">
         <Reveal>
           <div className="space-y-8">
