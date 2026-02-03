@@ -28,17 +28,13 @@ export default function Navigation() {
           CYC STUDIO
         </Link>
 
-        <div className="flex items-center text-lg tracking-wide">
+        <div className="flex justify-center items-center text-lg tracking-wide">
           <BaseButton
             onClick={toggleLanguage}
             className="text-sm opacity-60 border-0 underline"
           >
-            {/* {t("nav.toggle")} ({lang.toUpperCase()}) */}
             {lang === "zh" ? "EN" : "中文"}
           </BaseButton>
-          {/* <BaseButton href="#contact" className="text-sm">
-            {t("nav.contact")}
-          </BaseButton> */}
           <BaseButton href="/works" className="text-sm border-0 underline">
             {t("nav.works")}
           </BaseButton>

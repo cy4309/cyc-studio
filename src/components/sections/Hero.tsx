@@ -7,8 +7,8 @@ export default function Hero() {
   const { t } = useI18n();
 
   return (
-    <section className="min-h-dvh flex justify-center items-center">
-      <div className="text-center space-y-8 max-w-4xl">
+    <section className="hero-section h-screen relative flex justify-center items-center">
+      <div className="reveal text-center space-y-8 max-w-4xl">
         <Reveal y={40} duration={1}>
           <h1 className="text-6xl md:text-8xl tracking-wider font-bold">
             {t("home.heroTitle")}

@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "@/assets/styles/globals.css";
 import { I18nProvider } from "@/locales/i18n";
+import ScrollSectionsProvider from "@/components/ScrollSectionsProvider";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -25,7 +26,10 @@ export default function RootLayout({
         // className={`bg-black text-white antialiased ${nunito.variable} font-nunito`}
         className={`bg-black text-white antialiased ${nunito.variable}`}
       >
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <ScrollSectionsProvider />
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );

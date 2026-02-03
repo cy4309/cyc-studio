@@ -8,17 +8,19 @@ export default function ContactCTA() {
   const { t } = useI18n();
 
   return (
-    <section id="contact" className="min-h-dvh flex items-center">
+    <section id="contact" className="pin-section h-screen relative flex items-center">
       <div className="max-w-6xl mx-auto w-full">
         <Reveal>
           <div className="space-y-12 text-center">
-            <h2 className="text-5xl md:text-7xl">{t("contact.title")}</h2>
-            <p className="text-lg md:text-xl opacity-80 max-w-3xl mx-auto">
+            <h2 className="reveal text-5xl md:text-7xl">
+              {t("contact.title")}
+            </h2>
+            <p className="reveal text-lg md:text-xl opacity-80 max-w-3xl mx-auto">
               {t("contact.body")}
             </p>
             <a
               href="mailto:cy4309@gmail.com"
-              className="block underline hover:opacity-70"
+              className="reveal block underline hover:opacity-70"
             >
               cy4309@gmail.com
             </a>

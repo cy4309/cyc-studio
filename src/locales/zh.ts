@@ -1,8 +1,6 @@
 ﻿export const zh = {
   nav: {
     works: "作品",
-    // contact: "聯絡",
-    // toggle: "ZH / EN",
   },
   home: {
     heroTitle: "CYC STUDIO",

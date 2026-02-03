@@ -13,7 +13,7 @@ export default function WorksPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-dvh pt-32 pb-16 px-8">
+      <main className="min-h-dvh pt-32 px-8">
         <div className="max-w-6xl mx-auto">
           {/* Container reveal with stagger */}
           <Reveal stagger={0.24} className="space-y-16">

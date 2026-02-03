@@ -30,7 +30,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
   return (
     <>
       <Navigation />
-      <main className="min-h-dvh pt-32 pb-16 px-8">
+      <main className="min-h-dvh pt-32 px-8">
         <div className="max-w-4xl mx-auto">
           <BaseButton href="/works" className="text-sm opacity-60 mb-8">
             <Text path="works.back" />

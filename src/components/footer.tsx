@@ -1,8 +1,9 @@
 const Footer = () => {
   return (
     <>
-      <footer className="w-full border-t border-white/10">
-        <div className="container mx-auto px-6 py-6 space-y-1">
+      {/* <footer className="fixed bottom-0 left-0 w-full z-50 p-8 border-t border-white/10"> */}
+      <footer className="w-full z-50 p-8">
+        <div className="container mx-auto space-y-1">
           <p className="text-center text-sm tracking-wide opacity-70">
             Eason Chu
             <span className="mx-2 opacity-40">—</span>
