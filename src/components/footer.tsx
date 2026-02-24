@@ -1,28 +1,39 @@
+"use client";
+
+import SlidingGradientBg from "@/components/ui/SlidingGradientBg";
+import {
+  FOOTER_BG_SLIDE_DELAY_SEC,
+  FOOTER_BG_SLIDE_DURATION_SEC,
+} from "@/constants/timing";
+
 const Footer = () => {
   return (
-    <>
-      {/* <footer className="fixed bottom-0 left-0 w-full z-50 p-8 border-t border-white/10"> */}
-      <footer className="w-full z-50 p-8">
-        <div className="container mx-auto space-y-1">
-          <p className="text-center text-sm tracking-wide opacity-70">
-            Eason Chu
-            <span className="mx-2 opacity-40">—</span>
-            <a
-              href="mailto:cy4309@gmail.com"
-              className="underline hover:opacity-70"
-            >
-              cy4309@gmail.com
-            </a>
-            <span className="mx-2 opacity-40">/</span>
-            <span className="opacity-80">+886&nbsp;916&nbsp;530&nbsp;519</span>
-          </p>
+    <footer className="relative w-full z-50 overflow-hidden p-8">
+      <SlidingGradientBg
+        delaySec={FOOTER_BG_SLIDE_DELAY_SEC}
+        durationSec={FOOTER_BG_SLIDE_DURATION_SEC}
+        className="bg-gradient-to-l from-transparent via-gray-500/5 to-gray-500/10"
+        slideOrigin="right"
+      />
+      <div className="relative z-10 container mx-auto space-y-1">
+        <p className="text-center text-sm tracking-wide opacity-70">
+          Eason Chu
+          <span className="mx-2 opacity-40">—</span>
+          <a
+            href="mailto:cy4309@gmail.com"
+            className="underline hover:opacity-70"
+          >
+            cy4309@gmail.com
+          </a>
+          <span className="mx-2 opacity-40">/</span>
+          <span className="opacity-80">+886&nbsp;916&nbsp;530&nbsp;519</span>
+        </p>
 
-          <p className="text-center text-xs tracking-wide opacity-50">
-            © 2026 CYC Studio. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </>
+        <p className="text-center text-xs tracking-wide opacity-50">
+          © 2026 CYC Studio. All rights reserved.
+        </p>
+      </div>
+    </footer>
   );
 };
 

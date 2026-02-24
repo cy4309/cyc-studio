@@ -7,12 +7,13 @@ import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
 import About from "@/components/sections/About";
 import ContactCTA from "@/components/sections/ContactCTA";
+import { CONTENT_APPEAR_DELAY_MS } from "@/constants/timing";
 
 export default function Home() {
   return (
     <>
       <div className="min-h-dvh flex flex-col bg-black text-white">
-        <Navigation />
+        <Navigation appearAfterDelay={CONTENT_APPEAR_DELAY_MS} />
 
         <main className="flex-1 px-8">
           <Hero />
