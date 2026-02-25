@@ -15,7 +15,7 @@ export default function ContactCTA() {
       <div className="max-w-6xl mx-auto w-full">
         <Reveal>
           <div className="space-y-12 text-center">
-            <h2 className="reveal text-4xl md:text-6xl">
+            <h2 className="reveal text-4xl md:text-6xl text-primary font-bold">
               {t("contact.title")}
             </h2>
             <p className="reveal text-lg md:text-xl opacity-80 max-w-3xl mx-auto">

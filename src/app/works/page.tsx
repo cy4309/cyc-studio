@@ -21,7 +21,7 @@ export default function WorksPage() {
               <Reveal key={work.slug}>
                 <Link href={`/works/${work.slug}`} className="block group">
                   <article className="border-b border-white/20 pb-12">
-                    <h2 className="text-3xl md:text-4xl mb-4">
+                    <h2 className="text-3xl md:text-4xl mb-4 text-primary font-bold">
                       {t(work.titleKey)}
                     </h2>
                     <p className="opacity-80">{t(work.descriptionKey)}</p>

@@ -11,7 +11,7 @@ export default function Services() {
       <div className="max-w-6xl mx-auto w-full">
         <Reveal>
           <div className="space-y-8">
-            <h2 className="reveal text-4xl md:text-6xl">
+            <h2 className="reveal text-4xl md:text-6xl text-primary font-bold">
               {t("services.title")}
             </h2>
             <ul className="space-y-6 text-lg md:text-xl opacity-80">

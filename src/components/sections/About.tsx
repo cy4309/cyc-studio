@@ -11,7 +11,9 @@ export default function About() {
       <div className="max-w-6xl mx-auto w-full">
         <Reveal>
           <div className="space-y-8">
-            <h2 className="reveal text-4xl md:text-6xl">{t("about.title")}</h2>
+            <h2 className="reveal text-4xl md:text-6xl text-primary font-bold">
+              {t("about.title")}
+            </h2>
             <p className="reveal text-lg md:text-xl opacity-80 max-w-4xl leading-relaxed">
               {t("about.body")}
             </p>

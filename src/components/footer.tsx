@@ -8,11 +8,11 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative w-full z-50 overflow-hidden p-8">
+    <footer className="relative w-full z-50 overflow-hidden p-6">
       <SlidingGradientBg
         delaySec={FOOTER_BG_SLIDE_DELAY_SEC}
         durationSec={FOOTER_BG_SLIDE_DURATION_SEC}
-        className="bg-gradient-to-l from-transparent via-gray-500/5 to-gray-500/10"
+        className="bg-gradient-to-l from-transparent via-primary/30 to-primary/60"
         slideOrigin="right"
       />
       <div className="relative z-10 container mx-auto space-y-1">

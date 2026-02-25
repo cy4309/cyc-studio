@@ -25,15 +25,14 @@ export default function Navigation({ appearAfterDelay }: NavigationProps = {}) {
     setLang((prev) => (prev === "zh" ? "en" : "zh"));
   };
 
-  const navDelaySec =
-    appearAfterDelay != null ? appearAfterDelay / 1000 : 0;
+  const navDelaySec = appearAfterDelay != null ? appearAfterDelay / 1000 : 0;
   const bgSlideDelaySec =
     appearAfterDelay != null
       ? navDelaySec + NAV_BG_SLIDE_DELAY_AFTER_NAV_SEC
       : NAV_BG_SLIDE_DELAY_NO_HERO_SEC;
 
   const NavContent = (
-    <div className="relative z-10 flex justify-between items-center p-8">
+    <div className="relative z-10 flex justify-between items-center p-6">
       <Link
         href="/"
         className="text-xs font-medium tracking-wide hover:opacity-70 transition-opacity flex items-center gap-2 px-4 py-3"

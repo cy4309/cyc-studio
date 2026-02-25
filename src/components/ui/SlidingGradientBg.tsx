@@ -16,7 +16,7 @@ interface SlidingGradientBgProps {
 }
 
 const defaultGradient =
-  "bg-gradient-to-r from-transparent via-gray-500/5 to-gray-500/10";
+  "bg-gradient-to-r from-transparent via-primary/30 to-primary/60";
 
 export default function SlidingGradientBg({
   delaySec,
