@@ -11,11 +11,10 @@ export default function WorksPage() {
   const { t } = useI18n();
 
   return (
-    <>
+    <div className="h-dvh max-h-dvh flex flex-col">
       <Navigation />
-      <main className="min-h-dvh pt-32 px-8">
+      <main className="flex-1 min-h-0 overflow-y-auto pt-32 px-8 pb-8">
         <div className="max-w-6xl mx-auto">
-          {/* Container reveal with stagger */}
           <Reveal stagger={0.24} className="space-y-16">
             {works.map((work) => (
               <Reveal key={work.slug}>
@@ -32,7 +31,9 @@ export default function WorksPage() {
           </Reveal>
         </div>
       </main>
-      <Footer />
-    </>
+      <div className="shrink-0">
+        <Footer />
+      </div>
+    </div>
   );
 }
